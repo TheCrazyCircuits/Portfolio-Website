@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d"/>
+      <stop offset="100%" stop-color="#111c30"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="300" fill="url(#bgGrad)"/>
+  
+  <!-- Circuit Grid -->
+  <g stroke="#1e2c45" stroke-width="1.5" opacity="0.4">
+    <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600"/>
+    <path d="M100 0 V300 M200 0 V300 M300 0 V300 M400 0 V300 M500 0 V300"/>
+  </g>
+
+  <!-- Circuit Traces with Nodes -->
+  <g stroke="#58a6ff" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M50 250 L120 250 L160 210 L240 210"/>
+    <circle cx="240" cy="210" r="4" fill="#58a6ff"/>
+    <path d="M550 50 L480 50 L440 90 L360 90"/>
+    <circle cx="360" cy="90" r="4" fill="#58a6ff"/>
+  </g>
+
+  <!-- Robot Icon / Platform -->
+  <g transform="translate(300, 140)">
+    <!-- Glow circle -->
+    <circle cx="0" cy="0" r="70" fill="#1f6feb" opacity="0.1" filter="url(#glow)"/>
+    
+    <!-- Central Robot Body -->
+    <rect x="-45" y="-35" width="90" height="70" rx="14" fill="#161d27" stroke="#388bfd" stroke-width="3"/>
+    
+    <!-- Eyes / Ultrasonic Sensor Lenses -->
+    <circle cx="-18" cy="-8" r="12" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+    <circle cx="-18" cy="-8" r="5" fill="#58a6ff"/>
+    <circle cx="18" cy="-8" r="12" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+    <circle cx="18" cy="-8" r="5" fill="#58a6ff"/>
+
+    <!-- Sensor Waves -->
+    <path d="M-18 -25 A 16 16 0 0 1 18 -25" stroke="#3fb950" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M-28 -33 A 26 26 0 0 1 28 -33" stroke="#3fb950" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round"/>
+
+    <!-- Antenna -->
+    <line x1="0" y1="-35" x2="0" y2="-52" stroke="#388bfd" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="-54" r="5" fill="#3fb950" filter="url(#glow)"/>
+
+    <!-- Wheels / Tracks -->
+    <rect x="-56" y="-20" width="10" height="40" rx="4" fill="#2d3748" stroke="#58a6ff" stroke-width="1.5"/>
+    <rect x="46" y="-20" width="10" height="40" rx="4" fill="#2d3748" stroke="#58a6ff" stroke-width="1.5"/>
+  </g>
+
+  <!-- Label -->
+  <text x="300" y="255" text-anchor="middle" fill="#f0f6fc" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="22" letter-spacing="3">CUBOT PLATFORM</text>
+  <text x="300" y="278" text-anchor="middle" fill="#8b949e" font-family="'Fira Code', monospace" font-size="12">AUTONOMOUS EMBEDDED ROBOTICS</text>
+</svg>
